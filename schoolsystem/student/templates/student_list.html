@@ -7,23 +7,84 @@
     <title>Document</title>
 </head>
 <body>
+  <h1>STUDENT LIST</h1>
     <table>
         <tr>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>Age</th>
-        </tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>nationality</th>
+            <th>email</th>
+            <th>subject</th>
+             <th>admission_date</th>
+            <th>phone_number</th>
+
+            <th>parent_contact</th>
+             <th>academic_year</th>
+            <th>profile_pic</th>
+            
+            <th>language</th>
+            <th>classroom</th>
+           </tr>
         {% for student in students %}
         <tr>
-            <td>
-                <td>{{student.FirstName}}</td>
-            <td>{{student.LastName}}</td>
-               <td> {{student.Age}}</td>
-                
-            </td>
-        </tr>
+            
+             <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+             <td> {{student.age}}</td>
+             <td>{{student.gender}}</td>
+             <td>{{student.nationality}}</td>
+             <td>{{student.email}}</td>
+             <td>{{student.subject}}</td>
+             <td>{{student.admission_date}}</td>
+             <td>{{student.phone_number}}</td>
+             <td>{{student.parent_contact}}</td>
+             <td>{{student.academic_year}}</td>
+             <td>{{student.profile_pic}}</td>
+             <td>{{student.language}}</td>
+             <td>{{student.classroom}}</td>
+             
+
+  </tr>
         {% endfor %}
     </table>
-    </body>
+    <style>
+          table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+h1{
+  font-style: italic;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+}
+body{
+  background-color: rgb(168, 161, 168);
+  background-size: cover;
+}
+  
+
+ 
+  
+  
+
+
+</style> 
+ 
+
+</body>
 </html>
 

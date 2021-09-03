@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import BLANK_CHOICE_DASH, CharField
 
 class Trainer(models.Model):
     first_name=models.CharField(max_length=12)
@@ -10,7 +11,7 @@ class Trainer(models.Model):
     email=models.CharField(max_length=12)
     resume=models.FileField()
     city=models.CharField(max_length=10)
-    image_of_the_trainer=models.ImageField(upload_to="register_trainer")
+    image_of_the_trainer=models.ImageField(upload_to="images/")
     joining_date=models.DateField(max_length=8)
     salary=models.BigIntegerField()
 

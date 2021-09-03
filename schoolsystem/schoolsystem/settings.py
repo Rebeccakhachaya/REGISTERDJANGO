@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'student',
     'trainer',
     'course',
-    'event',
+    'calender'
+    
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'schoolsystem.urls'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 TEMPLATES = [

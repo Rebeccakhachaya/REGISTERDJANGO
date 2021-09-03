@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>TRAINER'S LIST</h1>
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">first_name</th>
+        <th scope="col">last_name</th>
+        <th scope="col">company_name</th>
+        <th scope="col">gender</th>
+
+        <th scope="col">email</th>
+        <th scope="col">image_of_the_trainer</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      
+   
+        {% for trainer in trainers %}
+        <tr>   
+             <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+             <td> {{trainer.company_name}}</td>
+             <td>{{trainer.gender}}</td>
+            <td>{{trainer.course_name}}</td>
+             <td> {{trainer.email}}</td>
+             <td><img src="{{ trainer.image_of_the_trainer.url }}" alt="image"width="370"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+          table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  padding-left: 100px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+  
+h1{
+  font-style: italic;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.thead-dark{
+  background-color: cadetblue;
+}
+
+ </style>
+    </body>
+</html>
