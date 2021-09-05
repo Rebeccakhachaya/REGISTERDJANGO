@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        {% if trainer.profile %}
+        <img src="{{trainer.profile.url}}" width="150px" height="150px">
+        {% endif %}
+    <h2>{{trainer.full_name}}</h2>
+    <h5>{{trainer.age}} years old</h5>
+    <h6>{{trainer.email_Address}}</h6>
+    <h6>{{trainer.phone_number}}</h6>
+    <h6>{{trainer.Courses}}</h6>
+</form>
+<style>
+    form{
+            background-color: paleturquoise;
+            margin-left: 100px;
+            width: 200px;
+            padding: 100px;
+            font-size: 20px;
+            border-radius: 20px;
+            margin-right: 300px;
+            border-radius: 30px;
+            font-size: 24px;
+            color:black;
+        }
+        img{
+            border-radius: 30px;
+        }
+</style>
+</body>
+</html>

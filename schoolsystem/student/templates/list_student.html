@@ -28,32 +28,32 @@
         </style>
     <table class="table">
         <tr>
-            <th>profile</th>
+            <th>Picture</th>
             <th>first name</th>
             <th>last name</th>
             <th>age</th>
             <th>date of birth</th>
             <th>gender</th>
-            <th>courses</th>
             <th>email address</th>
             <th>profile</th>
-            <th>Edit</th>
+            <th>edit</th>
         </tr>
-        {% for trainer in trainers %}
-        <tr>
-        {% if trainer.profile %}
-        <td><img src="{{trainer.profile.url}}" width="60px" height="60px"></td>
-        {% endif %}
-        <td>{{ trainer.first_name }}</td>
-        <td>{{ trainer.last_name }}</td>
-        <td>{{ trainer.age }}</td>
-        <td>{{ trainer.date_of_birth }}</td>
-        <td>{{ trainer.gender }}</td>
-        <td>{{ trainer.Courses }}</td>
-        <td>{{ trainer.email_Address }}</td>
-       
-    </tr>
-    {% endfor %}
-    </table>
+  {% for student in students %}
+  <tr>
+      {% if student.profile_pic %}
+         <td><img src="{{ student.profile_pic.url}}" width="60px" height="60px"></td>
+      {% endif %}
+  <td>{{ student.first_name }}</td>
+  <td>{{ student.last_name }}</td>
+  <td>{{ student.age }}</td>
+  <td>{{ student.date_of_birth }}</td>
+  <td>{{ student.gender }}</td>
+  <td>{{ student.email_address }}</td>
+  <td><a href="{% url 'student_profile' id=student.id %}">Profile</a></td>
+  <td><a href="{% url 'edit_student' id=student.id %}">Edit</a></td>
+  </tr>
+  {% endfor %}
+    
+</table>
 </body>
 </html>
