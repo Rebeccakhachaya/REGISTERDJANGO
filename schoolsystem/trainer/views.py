@@ -2,11 +2,7 @@ from django.shortcuts import render
 from .forms import TrainerRegistrationForm
 from .models import Trainer
 from django.shortcuts import redirect, render
-def register_trainer(request):
-    form =TrainerRegistrationForm()
-    return render(request,"register_trainer.html",
-    {"form":form,
-    "name":"Tabitha Aluel",})
+
 def register_trainer(request):
     if request.method=="POST":
         form=TrainerRegistrationForm(request.POST)
@@ -17,13 +13,15 @@ def register_trainer(request):
     else:
         form=TrainerRegistrationForm()
     return render(request, "register_trainer.html", {"form":form})
+
 def trainer_list(request):
     trainers=Trainer.objects.all()
-    return render(request, "trainer_list.html",
-    {"trainers":trainers})
+    return render(request, "trainer_list.html",{"trainers":trainers})
+
 def trainer_profile(request,id):
     trainer=Trainer.objects.get(id=id)
     return render(request,"trainer_profile.html",{'trainer':trainer})
+    
 def edit_trainer(request,id) :
     trainer=Trainer.objects.get(id=id)
     # form = None
@@ -31,10 +29,9 @@ def edit_trainer(request,id) :
         form=TrainerRegistrationForm(request.Post, instance=trainer)
         if form.is_valid():
             form.save()
-            return redirect("trainer_profile.html", id=trainer.id, )
     else:
-            form=TrainerRegistrationForm(instance=trainer)
-            return render(request, "edit_trainer.html", {"form" : form})
+        form=TrainerRegistrationForm(instance=trainer)
+        return render(request, "edit_trainer.html", {"form" : form})
 
 
 

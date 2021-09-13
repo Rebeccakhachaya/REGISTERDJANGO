@@ -1,7 +1,5 @@
-from django.conf.urls import url
 from . import views
 from django.urls import path
-from.views import Calendar, CalendarView
 
 
 app_name = 'calender'

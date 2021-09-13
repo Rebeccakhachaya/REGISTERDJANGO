@@ -23,12 +23,14 @@ from django.urls import path,include
 from django.urls.conf import include
 
 urlpatterns = [
-    path("",include("core.urls")),
+  
     path('admin/', admin.site.urls),
+    path("",include("core.urls")),
     path('student/',include("student.urls")),
     path('trainer/',include("trainer.urls")),
     path('course/',include("course.urls")),
     path('calender/', include('calender.urls')),
+    path('api/',include('api.urls')),
     
    
 ]
