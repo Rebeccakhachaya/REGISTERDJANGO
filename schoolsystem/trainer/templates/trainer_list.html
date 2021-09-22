@@ -31,28 +31,32 @@
            
             <th>first name</th>
             <th>last name</th>
-            <th>age</th>
-            <th>date of birth</th>
-            <th>gender</th>
+            <th>image_of_the_trainer</th>
             <th>courses</th>
             <th>email address</th>
             <th>profile</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>
         {% for trainer in trainers %}
         <tr>
         {% if trainer.profile %}
-        <td><img src="{{trainer.profile.url}}" width="60px" height="60px"></td>
+        <td><img src="{{trainers.image.url}}" width="45"></td>
+
         {% endif %}
         <td>{{ trainer.first_name }}</td>
         <td>{{ trainer.last_name }}</td>
-        <td>{{ trainer.age }}</td>
-        <td>{{ trainer.date_of_birth }}</td>
-        <td>{{ trainer.gender }}</td>
-        <td>{{ trainer.Courses }}</td>
-        <td>{{ trainer.email_Address }}</td>
+         <td>{{ image_of_the_trainer}}</td>
+        
+        <td>{{ trainer.course_name }}</td>
+        <td>{{ trainer.email }}</td>
         <td> <a href="">Profile</a></td>
         <td> <a href="">Edit</a></td>
+        <td> <a href="">Delete</a></td>
+
+
+    </tr>
+        
     </tr>
     </tr>
     {% endfor %}

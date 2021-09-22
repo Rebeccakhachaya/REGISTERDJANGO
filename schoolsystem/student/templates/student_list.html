@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>School System</title>
 </head>
-
 <body>
-    <style>
+    <h1>Students List</h1>
+    
+    
+
+
+        <table class="table">
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>age</th>
+            <th>nationality</th>
+            <th>parent_name</th>
+            <th>image</th>
+            <th>Edit</th>
+            <th>Profile</th>
+            <th>Delete</th>
+                
+                
+        {% for student in student %}
+        <tr>
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.nationality}}</td>
+            <td>{{student.parent_name}}</td>
+            <td>{{student.image}}</td>
+            
+            
+
+            {% if student.image %}
+            <td><img src="{{student.image.url}}" width="45"></td>
+            {% endif %}
+            <td> <a href="{%url 'edit_student' id=student.id%}">Edit</a></td>
+            <td> <a href="{%url 'student_profile' id=student.id%}">Profile</a></td>
+            <td> <a href="{%url 'delete_student' id=student.id%}">Delete</a></td>
+            <td> <a href="{%url 'register_student' id=student.id%}">Student</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+<style>
+    
         .table {
             width: 100%;
         }
@@ -37,39 +74,9 @@
             font-family: sans-serif;
         }
     </style>
-    <table class="table">
-        <tr>
-            
-            <th>first name</th>
-            <th>last name</th>
-            <th>age</th>
-            <th>date of birth</th>
-            <th>gender</th>
-            <th>Picture</th>
-            <th>profile</th>
-            <th>edit</th>
-            <th>delete</th>
-        </tr>
-        {% for student in students %}
-        <tr>
-            
-            <td>{{ student.first_name }}</td>
-            <td>{{ student.last_name }}</td>
-            <td>{{ student.age }}</td>
-            <td>{{ student.date_of_birth }}</td>
-            <td>{{ student.gender }}</td>
+   
+    
+    
 
-            {% if student.profile_pic %}
-            <td><img src="{{ student.profile_pic.url}}" width="60px" height="60px"></td>
-            {% endif %}
-            
-            <td><a href="{% url 'student:profile' id=student.id% }">Profile</a></td>
-            <td><a href="{% url 'student:edit' id=id% }">Edit</a></td>
-            <td><a href="{% url 'deleteDtudent' id=id% }">Delete</a></td>
-        </tr>
-        {% endfor %}
-        
-    </table>
 </body>
-
 </html>
