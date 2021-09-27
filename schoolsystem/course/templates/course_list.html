@@ -7,65 +7,52 @@
     <title>Document</title>
 </head>
 <body>
-  <h1>COURSE LIST</h1>
-    <table>
+    <style>
+        .table{
+            width: 100%;
+          }
+          .table td, #table th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            .table tr:nth-child(even){background-color: #F2F2F2;}
+            .table tr:hover {background-color: #ddd;}
+            .table th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: purple;
+                color: white;
+                font-family:sans-serif;
+            }
+        </style>
+    <table class="table">
         <tr>
-            <th>course_name</th>
-            <th>course_code</th>
-            <th>description</th>
-            <th>course_channel</th>
-            <th>course_email</th>
            
-
-           
-        
+          <th>course_name</th>
+          <th>course_code</th>
+          <th>description</th>
+          <th>course_channel</th>
+          <th>course_email</th>
         </tr>
         {% for course in courses %}
         <tr>
-            
-             <td>{{course.course_name}}</td>
-            <td>{{course.course_code}}</td>
-             <td> {{course.description}}</td>
-             <td>{{course.course_channel}}</td>
-             <td>{{course.course_email}}</td>
-            
-                
-           
-        </tr>
-        {% endfor %}
+       
+
+       
+        <td>{{course.course_name}}</td>
+        <td>{{course.course_code}}</td>
+         <td> {{course.description}}</td>
+         <td>{{course.course_channel}}</td>
+         <td>{{course.course_email}}</td>
+
+    </tr>
+        
+    </tr>
+    </tr>
+    {% endfor %}
     </table>
-    <style>
-          table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-  
-h1{
-  font-style: italic;
-  color: black;
-  font-size: 24px;
-  text-align: center;
-  
-}
-body{
-  background-color: rgb(168, 161, 168);
-}
-
-</style> 
- 
-
 </body>
 </html>
+
 

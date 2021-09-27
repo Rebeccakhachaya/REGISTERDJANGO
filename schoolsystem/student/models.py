@@ -1,11 +1,11 @@
 from django.db import models
 from django.db.models.fields import BLANK_CHOICE_DASH
+from datetime import datetime
 
 class Student(models.Model):
     first_name=models.CharField(max_length=12)
     last_name=models.CharField(max_length=20)
     age=models.PositiveSmallIntegerField()
-    date_of_birth=models.DateField(null=True)
     nationality_choice=((u'k',u'Kenyan'),(u'u',u'Ugandan'),(u'R',u'Rwandan'),(u'S',u'Sudanese'),(u'S',u'SouthSudanese'))
     nationality=models.CharField(max_length=20,choices=nationality_choice)
     image=models.ImageField(null=True,blank=True)
@@ -25,3 +25,8 @@ class Student(models.Model):
     admission_date=models.DateField(max_length=16,null=True,blank=True)
     languages_choice=((u'E',u'English'),(u'K',u'Kiswahili'),(u'F',u'French'))
     languages=models.CharField(max_length=15,choices=languages_choice, null=True,blank=True)
+
+    def full_name(self):
+        return f"{self.first_name}{self.last_name}"
+    def year_of_birth(self):
+        return 2021-self.age  
